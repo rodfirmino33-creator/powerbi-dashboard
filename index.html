@@ -1,9 +1,208 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Dashboards</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Central de Dashboards Power BI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#111827,#000000);
+    min-height:100vh;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    text-align:center;
+}
+
+.logo{
+    margin-bottom:15px;
+}
+
+.logo img{
+    width:120px;
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-bottom:15px;
+    font-size:1rem;
+}
+
+.update{
+    color:#94a3b8;
+    margin-bottom:40px;
+    font-size:0.9rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#f59e0b,#f97316);
+    border-radius:20px;
+    padding:30px;
+    transition:0.3s;
+    box-shadow:0 10px 30px rgba(249,115,22,0.25);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(249,115,22,0.45);
+}
+
+.icon{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:0.95rem;
+    opacity:0.95;
+}
+
+.footer{
+    margin-top:40px;
+    color:#64748b;
+    font-size:0.85rem;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Teste GitHub Pages</h1>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+    </div>
+
+    <h1>Central de Dashboards</h1>
+
+    <p class="subtitle">
+        Acesso rápido aos indicadores de performance das plataformas
+    </p>
+
+    <p class="update">
+        Última atualização: <span id="datetime"></span>
+    </p>
+
+    <div class="cards">
+
+        <a class="card"
+           href="https://app.powerbi.com/view?r=eyJrIjoiNGJhMTAyZDEtMTQ1OC00YjAwLWIyOTQtZDA1NTRhYzY3ZGRjIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+           target="_blank">
+
+            <div class="icon">🏆</div>
+            <h2>Prêmios ao Vivo</h2>
+            <p>Abrir Dashboard</p>
+
+        </a>
+
+        <a class="card"
+           href="https://app.powerbi.com/view?r=eyJrIjoiNGI0NDUzNDMtYmQ3Zi00OTkxLTlmZWItNDdjNWIyMDNkMDNlIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+           target="_blank">
+
+            <div class="icon">🎯</div>
+            <h2>Mega Bingo</h2>
+            <p>Abrir Dashboard</p>
+
+        </a>
+
+        <a class="card"
+           href="https://app.powerbi.com/view?r=eyJrIjoiM2M2Mzk3NTYtZjM5NS00Y2ExLThjNmQtOWE0MTIzOTJmYzg2IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+           target="_blank">
+
+            <div class="icon">💰</div>
+            <h2>Pix Keno</h2>
+            <p>Abrir Dashboard</p>
+
+        </a>
+
+        <a class="card"
+           href="https://app.powerbi.com/view?r=eyJrIjoiYzlmZTQ5ZDEtZjg2ZC00M2VlLTg2YjYtODRkZGVlYTdkMTJiIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+           target="_blank">
+
+            <div class="icon">🚀</div>
+            <h2>Apache Melissa</h2>
+            <p>Abrir Dashboard</p>
+
+        </a>
+
+        <a class="card"
+           href="https://app.powerbi.com/view?r=eyJrIjoiZGY3ZGQ3YzUtM2E4YS00YzZhLWFmYjItMjllNzM4NGUyMzM5IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+           target="_blank">
+
+            <div class="icon">📊</div>
+            <h2>Apache Aline</h2>
+            <p>Abrir Dashboard</p>
+
+        </a>
+
+    </div>
+
+    <div class="footer">
+        © 2026 | Central Power BI
+    </div>
+
+</div>
+
+<script>
+
+const agora = new Date();
+
+document.getElementById("datetime").innerHTML =
+agora.toLocaleDateString('pt-BR') +
+' às ' +
+agora.toLocaleTimeString('pt-BR');
+
+</script>
+
 </body>
 </html>
+```
