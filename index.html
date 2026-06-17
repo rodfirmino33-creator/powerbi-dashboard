@@ -1,11 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Central de Dashboards Power BI</title>
+<title>Central Power BI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,102 +15,192 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#0f172a,#111827,#000000);
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top left,#ffb30030 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#ffb30025 0%,transparent 30%),
+    #000;
+    color:white;
     min-height:100vh;
-    color:#fff;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:40px 20px;
+    padding:30px 15px;
 }
 
 .container{
     width:100%;
-    max-width:1200px;
+    max-width:700px;
+}
+
+.header{
     text-align:center;
+    margin-bottom:35px;
 }
 
 .logo{
+    width:90px;
     margin-bottom:15px;
 }
 
-.logo img{
-    width:120px;
-}
-
-h1{
-    font-size:2.5rem;
-    margin-bottom:10px;
+.title{
+    font-size:4rem;
+    font-weight:800;
+    color:#ffc400;
+    line-height:1;
+    text-shadow:0 0 25px rgba(255,196,0,.4);
 }
 
 .subtitle{
-    color:#cbd5e1;
-    margin-bottom:15px;
-    font-size:1rem;
+    font-size:1.2rem;
+    color:#e5e5e5;
+    margin-top:10px;
 }
 
 .update{
-    color:#94a3b8;
-    margin-bottom:40px;
-    font-size:0.9rem;
+    margin-top:12px;
+    color:#bdbdbd;
+    font-size:.95rem;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
 }
 
 .card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:linear-gradient(
+    145deg,
+    rgba(30,30,30,.95),
+    rgba(0,0,0,.98));
+
+    border:2px solid #ffc400;
+
+    border-radius:28px;
+
+    padding:24px 30px;
+
     text-decoration:none;
-    color:#fff;
-    background:linear-gradient(135deg,#f59e0b,#f97316);
-    border-radius:20px;
-    padding:30px;
-    transition:0.3s;
-    box-shadow:0 10px 30px rgba(249,115,22,0.25);
+
+    color:white;
+
+    transition:.3s ease;
+
+    box-shadow:
+    0 0 15px rgba(255,196,0,.15),
+    0 0 40px rgba(255,196,0,.08);
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 40px rgba(249,115,22,0.45);
+    transform:translateY(-4px) scale(1.02);
+
+    box-shadow:
+    0 0 20px rgba(255,196,0,.35),
+    0 0 50px rgba(255,196,0,.25);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
 
 .icon{
+    width:70px;
+    min-width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:3px solid #ffc400;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#ffc400;
+
+    font-size:2rem;
+
+    font-weight:700;
+}
+
+.divider{
+    width:1px;
+    height:60px;
+    background:#ffc400;
+}
+
+.name{
+    font-size:2rem;
+    font-weight:700;
+}
+
+.arrow{
+    color:#ffc400;
     font-size:3rem;
-    margin-bottom:15px;
+    transition:.3s;
 }
 
-.card h2{
-    font-size:1.3rem;
-    margin-bottom:10px;
-}
-
-.card p{
-    font-size:0.95rem;
-    opacity:0.95;
+.card:hover .arrow{
+    transform:translateX(8px);
 }
 
 .footer{
-    margin-top:40px;
-    color:#64748b;
-    font-size:0.85rem;
+    margin-top:35px;
+    text-align:center;
+    color:#8f8f8f;
+    font-size:.85rem;
 }
 
 @media(max-width:768px){
 
-    h1{
-        font-size:2rem;
+    .title{
+        font-size:3rem;
+    }
+
+    .name{
+        font-size:1.4rem;
+    }
+
+    .icon{
+        width:60px;
+        height:60px;
+        min-width:60px;
+        font-size:1.6rem;
     }
 
     .card{
-        padding:25px;
+        padding:20px;
     }
 
+    .arrow{
+        font-size:2.2rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .name{
+        font-size:1.15rem;
+    }
+
+    .left{
+        gap:15px;
+    }
+
+    .divider{
+        display:none;
+    }
 }
 
 </style>
@@ -118,76 +210,102 @@ h1{
 
 <div class="container">
 
-    <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+    <div class="header">
+
+        <img
+        class="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+        alt="Power BI">
+
+        <div class="title">POWER BI</div>
+
+        <div class="subtitle">
+            Atualizações realizadas diariamente
+        </div>
+
+        <div class="update">
+            Última atualização:
+            <span id="datetime"></span>
+        </div>
+
     </div>
-
-    <h1>Central de Dashboards</h1>
-
-    <p class="subtitle">
-        Acesso rápido aos indicadores de performance das plataformas
-    </p>
-
-    <p class="update">
-        Última atualização: <span id="datetime"></span>
-    </p>
 
     <div class="cards">
 
         <a class="card"
-           href="https://app.powerbi.com/view?r=eyJrIjoiNGJhMTAyZDEtMTQ1OC00YjAwLWIyOTQtZDA1NTRhYzY3ZGRjIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
-           target="_blank">
+        href="https://app.powerbi.com/view?r=eyJrIjoiNGJhMTAyZDEtMTQ1OC00YjAwLWIyOTQtZDA1NTRhYzY3ZGRjIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+        target="_blank">
 
-            <div class="icon">🏆</div>
-            <h2>Prêmios ao Vivo</h2>
-            <p>Abrir Dashboard</p>
+            <div class="left">
+                <div class="icon">🏆</div>
+                <div class="divider"></div>
+                <div class="name">Prêmios ao Vivo</div>
+            </div>
 
-        </a>
-
-        <a class="card"
-           href="https://app.powerbi.com/view?r=eyJrIjoiNGI0NDUzNDMtYmQ3Zi00OTkxLTlmZWItNDdjNWIyMDNkMDNlIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
-           target="_blank">
-
-            <div class="icon">🎯</div>
-            <h2>Mega Bingo</h2>
-            <p>Abrir Dashboard</p>
+            <div class="arrow">›</div>
 
         </a>
 
         <a class="card"
-           href="https://app.powerbi.com/view?r=eyJrIjoiM2M2Mzk3NTYtZjM5NS00Y2ExLThjNmQtOWE0MTIzOTJmYzg2IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
-           target="_blank">
+        href="https://app.powerbi.com/view?r=eyJrIjoiNGI0NDUzNDMtYmQ3Zi00OTkxLTlmZWItNDdjNWIyMDNkMDNlIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+        target="_blank">
 
-            <div class="icon">💰</div>
-            <h2>Pix Keno</h2>
-            <p>Abrir Dashboard</p>
+            <div class="left">
+                <div class="icon">B</div>
+                <div class="divider"></div>
+                <div class="name">Mega Bingo</div>
+            </div>
 
-        </a>
-
-        <a class="card"
-           href="https://app.powerbi.com/view?r=eyJrIjoiYzlmZTQ5ZDEtZjg2ZC00M2VlLTg2YjYtODRkZGVlYTdkMTJiIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
-           target="_blank">
-
-            <div class="icon">🚀</div>
-            <h2>Apache Melissa</h2>
-            <p>Abrir Dashboard</p>
+            <div class="arrow">›</div>
 
         </a>
 
         <a class="card"
-           href="https://app.powerbi.com/view?r=eyJrIjoiZGY3ZGQ3YzUtM2E4YS00YzZhLWFmYjItMjllNzM4NGUyMzM5IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
-           target="_blank">
+        href="https://app.powerbi.com/view?r=eyJrIjoiM2M2Mzk3NTYtZjM5NS00Y2ExLThjNmQtOWE0MTIzOTJmYzg2IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+        target="_blank">
 
-            <div class="icon">📊</div>
-            <h2>Apache Aline</h2>
-            <p>Abrir Dashboard</p>
+            <div class="left">
+                <div class="icon">₿</div>
+                <div class="divider"></div>
+                <div class="name">Pix Keno</div>
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+        <a class="card"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYzlmZTQ5ZDEtZjg2ZC00M2VlLTg2YjYtODRkZGVlYTdkMTJiIiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+        target="_blank">
+
+            <div class="left">
+                <div class="icon">A</div>
+                <div class="divider"></div>
+                <div class="name">Apache Melissa</div>
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+        <a class="card"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZGY3ZGQ3YzUtM2E4YS00YzZhLWFmYjItMjllNzM4NGUyMzM5IiwidCI6IjA1MTlkYzJmLWEzNDUtNGIxMS1iNDMwLTc3NDBkZjExNDkzNCJ9"
+        target="_blank">
+
+            <div class="left">
+                <div class="icon">A</div>
+                <div class="divider"></div>
+                <div class="name">Apache Aline</div>
+            </div>
+
+            <div class="arrow">›</div>
 
         </a>
 
     </div>
 
     <div class="footer">
-        © 2026 | Central Power BI
+        Central de Dashboards
     </div>
 
 </div>
@@ -197,12 +315,11 @@ h1{
 const agora = new Date();
 
 document.getElementById("datetime").innerHTML =
-agora.toLocaleDateString('pt-BR') +
-' às ' +
-agora.toLocaleTimeString('pt-BR');
+agora.toLocaleDateString("pt-BR") +
+" às " +
+agora.toLocaleTimeString("pt-BR");
 
 </script>
 
 </body>
 </html>
-```
